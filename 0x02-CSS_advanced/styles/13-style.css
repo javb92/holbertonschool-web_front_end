@@ -28,15 +28,15 @@ a {
 	text-decoration: none;
 }
 
-a[href]:visited {
+a[att=href]:visited {
 	font-style: italic;
 }
 
-a[href]:hover {
+a[att=href]:hover {
 	text-decoration: underline;
 }
 
-a[href]:active {
+a[att=href]:active {
 	background-color: var(--color-light-grey);
 }
 
