@@ -23,20 +23,20 @@ h6 {
 	font-weight: var(--font-weight-bold);
 }
 
-a {
+a[href^="http"] {
 	color: var(--text-color);
 	text-decoration: none;
 }
 
-a[att=href]:visited {
+a[href^="http"]:visited {
 	font-style: italic;
 }
 
-a[att=href]:hover {
+a[href^="http"]:hover {
 	text-decoration: underline;
 }
 
-a[att=href]:active {
+a[href^="http"]:active {
 	background-color: var(--color-light-grey);
 }
 
