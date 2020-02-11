@@ -1,6 +1,6 @@
 /* 13. Pseudo Classes */
 
-* {
+*, *:before, *:after {
     box-sizing: border-box;
 }
 
