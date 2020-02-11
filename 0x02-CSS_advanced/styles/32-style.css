@@ -222,6 +222,8 @@ a:active {
     color: var(--button-hover-color);
     text-decoration: var(--button-hover-text-decoration);
     background: var(--button-hover-background);
+    transition-duration: var(--transition-duration);
+    transition-property: color, background-color;
 }
 .card-category {
     color: var(--color-primary);
@@ -412,7 +414,6 @@ ul.row {
 }
 .card-work:hover .card-inner {
     background-color: rgba(0, 0, 0, 0.7);
-    transition: var(–transition-duration) var(transition-cubic-bezier);
 }
 .card-work .card-title {
     text-align: center;
@@ -457,13 +458,10 @@ ul.row {
 
 .card-work:hover .card-image {
     transform: scale(1.2);
+    transition: var(–transition-duration) var(transition-cubic-bezier);
 }
 
 .card-work:hover .card-outer {
     transform: scale(0.95);
 }
 
-.button:hover {
-    transition-duration: var(--transition-duration);
-    transition-property: color, background-color;
-}
