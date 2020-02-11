@@ -385,7 +385,7 @@ ul.row {
     background-color: var(--color-white);
     width: 0;
     height: 0.2rem;
-    transition: var(–-transition-duration) var(--transition-cubic-bezier);
+    transition: var(–transition-duration) var(transition-cubic-bezier);
 }
 .nav .nav-item:hover .nav-link::before {
     background-color: var(--color-primary);
@@ -408,11 +408,11 @@ ul.row {
     left: -0.1rem;
     right: -0.1rem;
     z-index: 1;
-    transition: var(–-transition-duration) var(--transition-cubic-bezier);
+    transition: var(–transition-duration) var(transition-cubic-bezier);
 }
 .card-work:hover .card-inner {
     background-color: rgba(0, 0, 0, 0.7);
-    transition: var(–-transition-duration) var(--transition-cubic-bezier);
+    transition: var(–transition-duration) var(transition-cubic-bezier);
 }
 .card-work .card-title {
     text-align: center;
