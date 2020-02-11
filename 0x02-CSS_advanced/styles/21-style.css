@@ -149,11 +149,6 @@ ul.row {
     clear: both;
 }
 
-[class*="col-"] {
-    float: left;
-    padding: 0.5rem;
-}
-
  :root {
 	--color-primary: #d73953;
 	--color-black: #090909;
@@ -195,4 +190,9 @@ ul.row {
 
 .footer {
     padding: var(--footer-padding);
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 0.5rem;
 }
