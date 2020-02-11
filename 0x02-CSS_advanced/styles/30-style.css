@@ -393,7 +393,7 @@ ul.row {
     position: relative;
     overflow: hidden;
 }
-.card-work .card-image image {
+.card-work .card-image img {
     height: 30rem;
     width: 100%;
     object-fit: cover;
@@ -406,7 +406,7 @@ ul.row {
     right: -0.1rem;
     z-index: 1;
 }
-.card-inner:hover {
+.card-work:hover .card-inner {
     background-color: rgba(0, 0, 0, 0.7);
 }
 .card-work .card-title {
@@ -414,15 +414,16 @@ ul.row {
     margin: 0;
     opacity: 0;
     height: 100%;
+    position: relative;
 }
 
-.card-title, .card-work a {
+.card-title .card-work a {
     display: block;
     text-decoration: none;
     padding-top: 45%;
 }
 
-.card-title, .card-work a::after {
+.card-title .card-work a::after {
     position: absolute;
     top: 0;
     right: 0;
