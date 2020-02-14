@@ -1,0 +1,8 @@
+/* loops 1 */
+$class-slug: h !default;
+
+@for $i from 1 through 5 {
+  #{$class-slug}#{$i} {
+    font-size: 0px + $i
+}
+}
