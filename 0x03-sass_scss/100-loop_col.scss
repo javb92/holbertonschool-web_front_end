@@ -1,9 +1,6 @@
 /* advance task 1 */
 @for $i from 1 through 4 {
     .col-#{$i} {
-        @if $i == 1 { width: 100%; }
-        @if $i == 2 { width: 50%; }
-        @if $i == 3 { width: 33.3333333333%; }
-        @if $i == 4 { width: 25%; }
+        width: percentage(1 / $i);
   }
   }
