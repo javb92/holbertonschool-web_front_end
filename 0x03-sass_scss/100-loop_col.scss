@@ -1,9 +1,6 @@
 /* advance task 1 */
-
-$class-slug: col !default;
-
 @for $i from 1 through 4 {
-    .#{$class-slug}-#{$i} {
+    .col-#{$i} {
         @if $i == 1 { width: 100%; }
         @if $i == 2 { width: 50%; }
         @if $i == 3 { width: 33.3333333333%; }
