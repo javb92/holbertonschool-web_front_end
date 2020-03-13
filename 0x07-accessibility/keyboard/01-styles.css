@@ -676,7 +676,6 @@
     display: block;
     text-decoration: none;
     padding-top: 45%;
-    opacity: 0;
   }
   
   .card-work .card-title a::after {
@@ -686,6 +685,9 @@
     right: 0;
     bottom: 0;
     content: '';
+  }
+  .card-work .card-title a {
+    opacity: 0;
   }
   
   .card-work .card-title a:focus, .card-work:hover .card-title a {
