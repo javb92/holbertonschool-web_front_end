@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Task 6</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script type="application/javascript">
+        $(document).ready(function () {
+            function createFamilyTree(table_header) {
+                $('body').append('<table></table>');
+                $('table').append('<thead></thead>');
+                $('thead').append('<tr></tr>');
+                for (let x = 1; x <= table_header.length; x++) {
+                    $('thead > tr').append('<th></th>');
+                    $('thead > tr > th:nth-child(' + x + ')').text(table_header[x - 1]);
+                }
+                $('table').append('<tbody></tbody>');
+            }
+
+            function addNewMember(firstName, lastName, position) {
+                if (position === 'before') {
+                    $('tbody').prepend('<tr></tr>');
+                    $('tbody > tr:first').append('<td></td>', '<td></td>', '<td></td>');
+                    $('tbody > tr:first > td:nth-of-type(1)').text(firstName);
+                    $('tbody > tr:first > td:nth-of-type(2)').text(lastName);
+                    $('tbody > tr:first > td:nth-of-type(3)').text('(x)');
+                    $('tbody > tr:first > td:nth-of-type(3)').css('backgroundColor', 'orange');
+                    $('tbody > tr:first > td:nth-of-type(3)').click(function () { $(this).parent().remove(); });
+                } else {
+                    $('tbody').append('<tr></tr>');
+                    $('tbody > tr:last').append('<td></td>', '<td></td>', '<td></td>');
+                    $('tbody > tr:last > td:nth-of-type(1)').text(firstName);
+                    $('tbody > tr:last > td:nth-of-type(2)').text(lastName);
+                    $('tbody > tr:last > td:nth-of-type(3)').text('(x)');
+                    $('tbody > tr:last > td:nth-of-type(3)').css('backgroundColor', 'orange');
+                    $('tbody > tr:last > td:nth-of-type(3)').click(function () { $(this).parent().remove(); });
+                }
+            }
+
+            function createForm() {
+                $('body').prepend('<input type="text"></input>', '<input type="text"></input>', '<select><option value="before">Before</option><option value="after">After</option></select>', '<input type="submit"></input>');
+                $('input:last').click(function () {
+                    addNewMember($('input:first').val(), $('input:nth-of-type(2)').val(), $('select').val());
+                })
+            }
+
+            createFamilyTree(["Firstname", "Lastname"]);
+            addNewMember("Guillaume", "Salva");
+            addNewMember("Arielle", "Snizt");
+            addNewMember("Fanette", "Snizt");
+            addNewMember("Gerard", "Snizt");
+            addNewMember("Victor", "Salva");
+
+        });
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
