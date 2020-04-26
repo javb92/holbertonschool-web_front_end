@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+    <script src="./src/index.js"></script>
+</head>
+<body>
+    
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+<script>
+    let availableItems = ["Shampoo", "Soap", "Sponge", "Water"];
+    if (typeof(Storage) !== "undefined") {
+        // Code for localStorage/sessionStorage.
+        createStore();
+        displayCart();
+    } else {
+        // Sorry! No Web Storage support..
+        window.alert("Sorry, your browser does not support Web storage. Try again with a better one");
+    }
+    function addItemToCart(item){
+        // Store
+        localStorage.setItem(item, "true");
+        displayCart();
+    }
+    function createStore(){
+        var new_ul = document.createElement("ul");
+        new_ul.setAttribute("id", "list1");
+        document.body.appendChild(new_ul);
+
+        availableItems.forEach(element => {
+            var new_li = document.createElement("li");
+            var newContent = document.createTextNode(element); 
+            new_li.appendChild(newContent);
+            new_li.setAttribute("onclick", "addItemToCart('"+element+"')");
+            new_ul.appendChild(new_li);
+        });
+    }
+    function displayCart(){
+        if (localStorage.length !== 0) {
+            if (document.getElementById("msg_items_cart") == null){
+                var new_p = document.createElement("p");
+                var newContent = document.createTextNode("You previously had "+localStorage.length+" items in your cart"); 
+                new_p.appendChild(newContent);
+                new_p.setAttribute("id", "msg_items_cart");
+                document.body.appendChild(new_p);
+            }
+            else {
+                console.log(localStorage.length);
+                document.getElementById("msg_items_cart").innerHTML = "You previously had "+localStorage.length+" items in your cart";
+            }
+
+        }
+    }
+</script>
+
+</html>

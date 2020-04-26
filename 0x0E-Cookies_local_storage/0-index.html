@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 0</title>
+    <script src="./src/index.js"></script>
+</head>
+<body>
+    <h1>Login to the website</h1>
+
+        <input id="firstname" class="form-control" type="text" name="" placeholder="Firstname">
+        <input id="email" class="form-control" type="text" name="" placeholder="Email">
+        <button type="submit" onclick="setCookies()">Log me in</button>
+
+    <br>
+    <h1>Cookies</h1>
+
+        <button type="submit" onclick="showCookies()">Show the cookies</button>
+
+</body>
+<script>
+    function setCookies(){
+        let firstname = document.getElementById("firstname").value;
+        let email = document.getElementById("email").value;
+        setCookie2("firstname", firstname, 10);
+        setCookie2("email", email, 10);
+    }
+    function getCookie(name) {
+        var c_name = name + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(c_name) == 0) {
+                return c.substring(c_name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function setCookie2(name, value, days) {
+        var d = new Date;
+        d.setTime(d.getTime() + 24*60*60*1000*days);
+        document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString();
+    }
+    function deleteCookie(name) 
+    { 
+        setCookie2(name, '', -1); 
+    }
+
+    function showCookies(){
+        var body = document.body;
+        var newP = document.createElement("p"); 
+        var newContent = document.createTextNode("Email: " + getCookie("email") + " - " + "Firstname: " + getCookie("firstname")); 
+        newP.appendChild(newContent);
+        document.body.appendChild(newP);
+    }
+</script>
+</html>
